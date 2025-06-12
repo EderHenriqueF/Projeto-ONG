@@ -627,3 +627,8 @@ footer {
         opacity: 0;
     }
 }
+
+/* Classe utilitária para esconder elementos */
+.hidden {
+    display: none !important;
+}
