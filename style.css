@@ -55,3 +55,10 @@ header {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+/* Layout do conteúdo do cabeçalho */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
