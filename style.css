@@ -127,3 +127,13 @@ nav a:hover::before, nav a.active::before {
 nav a:hover, nav a.active {
     color: var(--accent);
 }
+
+/* Estilos da seção hero (banner principal) */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
