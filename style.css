@@ -210,3 +210,14 @@ nav a:hover, nav a.active {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(220, 38, 38, 0.6);
 }
+
+/* Variação de botão primário */
+.btn-primary {
+    background-color: var(--primary);
+    box-shadow: 0 4px 15px rgba(36, 86, 196, 0.4);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    box-shadow: 0 6px 20px rgba(54, 53, 53, 0.6);
+}
