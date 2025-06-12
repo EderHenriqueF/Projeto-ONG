@@ -273,3 +273,51 @@ needForm.addEventListener('submit', (e) => {
     showSection(needsSection);
 });
 
+/**
+ * Carrega e exibe as necessidades na seção de oportunidades
+ * 
+ * Esta função filtra as necessidades com base nos critérios de busca e tipo,
+ * e renderiza os cards correspondentes na página.
+ */
+function loadNeeds() {
+    // Filtrar e pesquisar necessidades
+    let filteredNeeds = [...needs];
+    const searchTerm = searchInput.value.toLowerCase();
+    const filterValue = filterType.value;
+    
+    if (searchTerm) {
+        filteredNeeds = filteredNeeds.filter(need => 
+            need.title.toLowerCase().includes(searchTerm) || 
+            need.description.toLowerCase().includes(searchTerm) ||
+            need.institution.toLowerCase().includes(searchTerm)
+        );
+    }
+    
+    if (filterValue) {
+        filteredNeeds = filteredNeeds.filter(need => need.helpType === filterValue);
+    }
+    
+    // Exibir necessidades
+    if (filteredNeeds.length === 0) {
+        needsContainer.innerHTML = '<p class="no-results">Nenhuma necessidade encontrada. Cadastre uma nova necessidade ou ajuste seus critérios de busca.</p>';
+        return;
+    }
+    
+    needsContainer.innerHTML = filteredNeeds.map(need => `
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">${need.title}</h3>
+            </div>
+            <div class="card-body">
+                <p class="card-text">${need.description}</p>
+                <p class="card-text"><strong>Instituição:</strong> ${need.institution}</p>
+                <p class="card-text"><strong>Local:</strong> ${need.street}, ${need.neighborhood}, ${need.city} - ${need.state}</p>
+                <p class="card-text"><strong>Contato:</strong> ${need.contact}</p>
+            </div>
+            <div class="card-footer">
+                <span class="tag ${getTagClass(need.helpType)}">${need.helpType}</span>
+                <small>${need.date}</small>
+            </div>
+        </div>
+    `).join('');
+}
