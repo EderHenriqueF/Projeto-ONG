@@ -69,3 +69,16 @@ header {
     align-items: center;
     gap: 10px;
 }
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    animation: pulse 2s infinite;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    background: linear-gradient(to right, var(--white), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
