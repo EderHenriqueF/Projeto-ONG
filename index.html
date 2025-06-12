@@ -51,6 +51,81 @@
 
     <!-- Conteúdo principal da página -->
     <main class="container">
+
+        <!-- Seção de Cadastro (inicialmente oculta) -->
+        <section id="register-section" class="hidden">
+            <div class="section-title">
+                <h2>Cadastrar Necessidade</h2>
+                <p>Preencha o formulário abaixo para cadastrar as necessidades da sua instituição</p>
+            </div>
+            
+            <form id="need-form">
+                <div class="form-group">
+                    <label for="institution-name">Nome da Instituição *</label>
+                    <input type="text" id="institution-name" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="help-type">Tipo de Ajuda *</label>
+                    <select id="help-type" class="form-control" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value="Educação">Educação</option>
+                        <option value="Saúde">Saúde</option>
+                        <option value="Meio Ambiente">Meio Ambiente</option>
+                        <option value="Doação de Alimentos">Doação de Alimentos</option>
+                        <option value="Doação de Roupas">Doação de Roupas</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="need-title">Título da Necessidade *</label>
+                    <input type="text" id="need-title" class="form-control" required placeholder="Ex: Ajuda com reforço escolar">
+                </div>
+                
+                <div class="form-group">
+                    <label for="need-description">Descrição Detalhada *</label>
+                    <textarea id="need-description" class="form-control" required placeholder="Descreva detalhadamente o que é necessário e como os voluntários podem ajudar"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cep">CEP *</label>
+                    <input type="text" id="cep" class="form-control" required placeholder="00000-000" maxlength="9">
+                </div>
+                
+                <div class="address-group">
+                    <div class="form-group">
+                        <label for="street">Rua *</label>
+                        <input type="text" id="street" class="form-control" required readonly>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="neighborhood">Bairro *</label>
+                        <input type="text" id="neighborhood" class="form-control" required readonly>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="city">Cidade *</label>
+                        <input type="text" id="city" class="form-control" required readonly>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="state">Estado *</label>
+                        <input type="text" id="state" class="form-control" required readonly>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact">Contato (E-mail ou Telefone) *</label>
+                    <input type="text" id="contact" class="form-control" required placeholder="email@exemplo.com ou (00) 00000-0000">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="reset" class="btn">Limpar</button>
+                    <button type="submit" class="btn btn-primary">Cadastrar Necessidade</button>
+                </div>
+            </form>
+        </section>
     </main>
 </body>
 </html>
