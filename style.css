@@ -82,3 +82,10 @@ header {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+/* Animação de pulsar para o logo */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
