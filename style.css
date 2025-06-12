@@ -13,3 +13,12 @@
     --white: #ffffff;
     --success: #7705b9;
 }
+
+/* Reset básico para remover margens e paddings padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
