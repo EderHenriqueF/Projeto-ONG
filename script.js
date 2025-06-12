@@ -321,3 +321,27 @@ function loadNeeds() {
         </div>
     `).join('');
 }
+
+/**
+ * Retorna a classe CSS correspondente ao tipo de ajuda
+ * 
+ * @param {string} helpType - O tipo de ajuda (Educação, Saúde, etc.)
+ * @return {string} - A classe CSS correspondente
+ * 
+ * Esta função mapeia os tipos de ajuda para classes CSS que definem cores diferentes
+ * para cada tipo de tag.
+ */
+function getTagClass(helpType) {
+    switch(helpType) {
+        case 'Educação': return 'education';
+        case 'Saúde': return 'health';
+        case 'Meio Ambiente': return 'environment';
+        case 'Doação de Alimentos': return 'food';
+        case 'Doação de Roupas': return 'clothes';
+        default: return 'other';
+    }
+}
+
+// Eventos de pesquisa/filtro
+searchInput.addEventListener('input', loadNeeds);
+filterType.addEventListener('change', loadNeeds);
