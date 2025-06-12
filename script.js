@@ -136,3 +136,22 @@ welcomeNeeds.addEventListener('click', (e) => {
     e.preventDefault();
     showSection(needsSection);
 });
+
+/**
+ * Aplica máscara ao campo de CEP e busca endereço quando completo
+ * 
+ * Este listener formata o CEP no padrão 00000-000 e, quando completo,
+ * faz uma requisição à API ViaCEP para preencher automaticamente os campos de endereço.
+ */
+cepInput.addEventListener('input', (e) => {
+    let value = e.target.value.replace(/\D/g, '');
+    if (value.length > 5) {
+        value = value.substring(0, 5) + '-' + value.substring(5, 8);
+    }
+    e.target.value = value;
+    
+    // Buscar CEP quando tiver 9 caracteres (incluindo o traço)
+    if (value.length === 9) {
+        fetchCEP(value);
+    }
+});
