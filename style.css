@@ -228,3 +228,8 @@ nav a:hover, nav a.active {
     gap: 1rem;
     flex-wrap: wrap;
 }
+
+/* Estilos do conteúdo principal */
+main {
+    padding: 5rem 0;
+}
