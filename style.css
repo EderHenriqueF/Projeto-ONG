@@ -221,3 +221,10 @@ nav a:hover, nav a.active {
     background-color: var(--primary-dark);
     box-shadow: 0 6px 20px rgba(54, 53, 53, 0.6);
 }
+
+/* Grupo de botões */
+.btn-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
