@@ -155,3 +155,36 @@ cepInput.addEventListener('input', (e) => {
         fetchCEP(value);
     }
 });
+
+/**
+ * Busca informações de endereço usando a API ViaCEP
+ * 
+ * @param {string} cep - O CEP a ser consultado
+ * 
+ * Esta função faz uma requisição à API ViaCEP e preenche os campos de endereço
+ * automaticamente quando o CEP é válido.
+ */
+function fetchCEP(cep) {
+    cep = cep.replace('-', '');
+    fetch(`https://viacep.com.br/ws/${cep}/json/`)
+        .then(response => response.json())
+        .then(data => {
+            if (!data.erro) {
+                streetInput.value = data.logradouro;
+                neighborhoodInput.value = data.bairro;
+                cityInput.value = data.localidade;
+                stateInput.value = data.uf;
+                
+                // Remover borda vermelha se existir
+                cepInput.style.borderColor = '#e2e8f0';
+            } else {
+                alert('CEP não encontrado. Por favor, verifique o número digitado.');
+                cepInput.style.borderColor = 'red';
+            }
+        })
+        .catch(error => {
+            console.error('Erro ao buscar CEP:', error);
+            alert('Erro ao buscar CEP. Por favor, tente novamente.');
+            cepInput.style.borderColor = 'red';
+        });
+}
