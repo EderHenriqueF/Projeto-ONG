@@ -285,3 +285,8 @@ main {
     position: relative;
     border: 1px solid #e2e8f0;
 }
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
