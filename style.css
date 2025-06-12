@@ -440,3 +440,14 @@ textarea.form-control {
     min-height: 150px;
     resize: vertical;
 }
+
+/* Grupo de campos de endereço em grid */
+.address-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.address-group .form-group {
+    margin-bottom: 0;
+}
