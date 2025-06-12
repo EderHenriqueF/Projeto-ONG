@@ -40,3 +40,24 @@ const stateInput = document.getElementById('state');
 const needsContainer = document.getElementById('needs-container');
 const searchInput = document.getElementById('search-input');
 const filterType = document.getElementById('filter-type');
+
+/**
+ * Cria corações flutuantes animados no fundo da página
+ * 
+ * Esta função cria múltiplos elementos de coração com posições e tempos de animação aleatórios
+ * para criar um efeito visual agradável no plano de fundo.
+ */
+function createHearts() {
+    const heartsContainer = document.getElementById('hearts-container');
+    const heartCount = 15;
+    
+    for (let i = 0; i < heartCount; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.innerHTML = '❤️';
+        heart.style.left = `${Math.random() * 100}%`;
+        heart.style.animationDuration = `${5 + Math.random() * 10}s`;
+        heart.style.animationDelay = `${Math.random() * 5}s`;
+        heartsContainer.appendChild(heart);
+    }
+}
