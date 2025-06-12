@@ -632,3 +632,73 @@ footer {
 .hidden {
     display: none !important;
 }
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero {
+        height: 400px;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+    
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .btn-group {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .address-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-container {
+        flex-direction: column;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    form {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 350px;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+}
