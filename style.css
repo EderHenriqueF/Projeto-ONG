@@ -380,3 +380,16 @@ main {
     background-color: #e2e8f0;
     color: #334155;
 }
+
+/* Estilos do formulário */
+form {
+    background-color: var(--white);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
