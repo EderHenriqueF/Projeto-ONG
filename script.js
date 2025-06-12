@@ -345,3 +345,93 @@ function getTagClass(helpType) {
 // Eventos de pesquisa/filtro
 searchInput.addEventListener('input', loadNeeds);
 filterType.addEventListener('change', loadNeeds);
+
+/**
+ * Inicializa a aplicação
+ * 
+ * Esta função é chamada quando o DOM está completamente carregado e:
+ * 1. Mostra a seção de boas-vindas
+ * 2. Cria os corações flutuantes
+ * 3. Adiciona alguns dados de exemplo para demonstração
+ */
+function init() {
+    showSection(welcomeSection);
+    createHearts();
+    
+    // Adicionar alguns dados de exemplo
+    needs = [
+        {
+            id: 1,
+            institution: "Associação Educar",
+            helpType: "Educação",
+            title: "Aulas de reforço escolar",
+            description: "Precisamos de voluntários para ajudar crianças com dificuldades em matemática e português. As aulas acontecem às terças e quintas, das 14h às 16h.",
+            cep: "01001-000",
+            street: "Praça da Sé",
+            neighborhood: "Sé",
+            city: "São Paulo",
+            state: "SP",
+            contact: "contato@educar.org.br",
+            date: "10/06/2023"
+        },
+        {
+            id: 2,
+            institution: "ONG Verde Vida",
+            helpType: "Meio Ambiente",
+            title: "Limpeza de praia",
+            description: "Vamos realizar uma ação de limpeza na praia no próximo sábado. Precisamos de voluntários para ajudar na coleta de resíduos e conscientização ambiental.",
+            cep: "22010-000",
+            street: "Avenida Atlântica",
+            neighborhood: "Copacabana",
+            city: "Rio de Janeiro",
+            state: "RJ",
+            contact: "verdevida@ong.org",
+            date: "08/06/2023"
+        },
+        {
+            id: 3,
+            institution: "Casa do Pão",
+            helpType: "Doação de Alimentos",
+            title: "Arrecadação de alimentos não perecíveis",
+            description: "Estamos coletando alimentos para distribuir para famílias carentes da região. Precisamos de ajuda para arrecadar e organizar as doações.",
+            cep: "30150-000",
+            street: "Avenida Afonso Pena",
+            neighborhood: "Centro",
+            city: "Belo Horizonte",
+            state: "MG",
+            contact: "(31) 99999-9999",
+            date: "05/06/2023"
+        },
+        {
+            id: 4,
+            institution: "Abrigo Amor e Cuidado",
+            helpType: "Doação de Roupas",
+            title: "Doação de agasalhos",
+            description: "Estamos arrecadando agasalhos, cobertores e calçados para pessoas em situação de rua. As doações podem ser entregues de segunda a sexta, das 9h às 17h.",
+            cep: "90010-000",
+            street: "Rua dos Andradas",
+            neighborhood: "Centro Histórico",
+            city: "Porto Alegre",
+            state: "RS",
+            contact: "abrigoamorecuidado@gmail.com",
+            date: "01/06/2023"
+        },
+        {
+            id: 5,
+            institution: "Saúde para Todos",
+            helpType: "Saúde",
+            title: "Ação de saúde comunitária",
+            description: "Precisamos de profissionais de saúde e voluntários para auxiliar em uma ação comunitária que oferecerá aferição de pressão, teste de glicemia e orientações sobre saúde preventiva.",
+            cep: "70070-100",
+            street: "Setor Hospitalar",
+            neighborhood: "Asa Sul",
+            city: "Brasília",
+            state: "DF",
+            contact: "(61) 3333-4444",
+            date: "12/06/2023"
+        }
+    ];
+}
+
+// Iniciar a aplicação quando o DOM estiver carregado
+document.addEventListener('DOMContentLoaded', init);
