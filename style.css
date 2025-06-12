@@ -290,3 +290,11 @@ main {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
+
+/* Cabeçalho do card com gradiente */
+.card-header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--white);
+    padding: 1.5rem;
+    position: relative;
+}
