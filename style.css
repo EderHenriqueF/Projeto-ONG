@@ -1,0 +1,15 @@
+/* 
+ * Estilos globais e variáveis CSS
+ * Define as cores principais e estilos base para toda a aplicação
+ */
+:root {
+    --primary: #013dc0;
+    --primary-dark: #3a6bd6;
+    --secondary: #dc2626;
+    --accent: #07ebfc;
+    --light: #f8fafc;
+    --dark: #1e293b;
+    --gray: #394141;
+    --white: #ffffff;
+    --success: #7705b9;
+}
