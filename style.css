@@ -451,3 +451,11 @@ textarea.form-control {
 .address-group .form-group {
     margin-bottom: 0;
 }
+
+/* Ações do formulário */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
