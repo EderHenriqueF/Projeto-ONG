@@ -393,3 +393,14 @@ form {
     overflow: hidden;
     border: 1px solid #e2e8f0;
 }
+
+/* Linha lateral decorativa no formulário */
+form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary), var(--secondary));
+}
