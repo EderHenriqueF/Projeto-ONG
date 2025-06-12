@@ -15,3 +15,9 @@ let needs = [];
 const navHome = document.getElementById('nav-home');
 const navRegister = document.getElementById('nav-register');
 const navNeeds = document.getElementById('nav-needs');
+
+// Seções da página
+const homeSection = document.getElementById('home-section');
+const welcomeSection = document.getElementById('welcome-section');
+const registerSection = document.getElementById('register-section');
+const needsSection = document.getElementById('needs-section');
