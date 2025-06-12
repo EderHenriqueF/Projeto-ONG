@@ -530,3 +530,30 @@ footer {
     align-items: center;
     gap: 2rem;
 }
+
+/* Logo no rodapé */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.footer-logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.footer-logo h3 {
+    font-size: 1.8rem;
+    background: linear-gradient(to right, var(--white), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-text {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
