@@ -171,3 +171,20 @@ nav a:hover, nav a.active {
     margin-bottom: 2.5rem;
     color: rgba(255, 255, 255, 0.9);
 }
+
+/* Estilos base para botões */
+.btn {
+    display: inline-block;
+    background-color: var(--secondary);
+    color: var(--white);
+    padding: 0.9rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+    position: relative;
+    overflow: hidden;
+}
