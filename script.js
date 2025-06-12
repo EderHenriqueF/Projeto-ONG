@@ -10,3 +10,8 @@
 
 // Dados das necessidades (simulando um banco de dados)
 let needs = [];
+
+// Elementos da navegação
+const navHome = document.getElementById('nav-home');
+const navRegister = document.getElementById('nav-register');
+const navNeeds = document.getElementById('nav-needs');
