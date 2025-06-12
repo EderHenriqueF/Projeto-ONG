@@ -62,3 +62,10 @@ header {
     justify-content: space-between;
     align-items: center;
 }
+
+/* Estilos do logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
