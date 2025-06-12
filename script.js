@@ -61,3 +61,22 @@ function createHearts() {
         heartsContainer.appendChild(heart);
     }
 }
+
+/**
+ * Mostra uma seção específica e esconde as outras
+ * 
+ * @param {HTMLElement} sectionToShow - A seção que deve ser exibida
+ * 
+ * Esta função controla a navegação entre as diferentes seções da aplicação,
+ * garantindo que apenas a seção ativa seja visível.
+ */
+function showSection(sectionToShow) {
+    const sections = [welcomeSection, registerSection, needsSection];
+    sections.forEach(section => {
+        if (section === sectionToShow) {
+            section.classList.remove('hidden');
+        } else {
+            section.classList.add('hidden');
+        }
+    });
+}
