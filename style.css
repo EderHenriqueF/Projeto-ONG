@@ -336,3 +336,16 @@ main {
     align-items: center;
     background-color: #f8fafc;
 }
+
+/* Estilos para tags de categoria */
+.tag {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background-color: #e2e8f0;
+    color: var(--dark);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
