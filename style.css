@@ -504,3 +504,12 @@ textarea.form-control {
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
+
+/* Mensagem quando não há resultados */
+.no-results {
+    text-align: center;
+    grid-column: 1 / -1;
+    padding: 3rem;
+    color: var(--gray);
+    font-size: 1.2rem;
+}
