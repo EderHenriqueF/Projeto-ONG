@@ -247,3 +247,22 @@ main {
     position: relative;
     color: var(--primary-dark);
 }
+
+/* Linha decorativa abaixo dos títulos de seção */
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    border-radius: 2px;
+}
+
+.section-title p {
+    max-width: 700px;
+    margin: 1rem auto 0;
+    color: var(--gray);
+}
