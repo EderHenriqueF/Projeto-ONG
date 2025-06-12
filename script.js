@@ -7,3 +7,6 @@
  * - Listagem e filtragem de oportunidades
  * - Efeitos visuais e animações
  */
+
+// Dados das necessidades (simulando um banco de dados)
+let needs = [];
