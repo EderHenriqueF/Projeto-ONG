@@ -79,4 +79,60 @@ function showSection(sectionToShow) {
             section.classList.add('hidden');
         }
     });
+
+    // Ajustar a exibição do hero
+    if (sectionToShow === welcomeSection) {
+        homeSection.style.display = 'flex';
+    } else {
+        homeSection.style.display = 'none';
+    }
+    
+    // Atualizar navegação ativa
+    const navItems = [navHome, navRegister, navNeeds];
+    navItems.forEach(item => item.classList.remove('active'));
+    
+    if (sectionToShow === welcomeSection) navHome.classList.add('active');
+    if (sectionToShow === registerSection) navRegister.classList.add('active');
+    if (sectionToShow === needsSection) navNeeds.classList.add('active');
+    
+    // Se for a seção de necessidades, carregar os dados
+    if (sectionToShow === needsSection) {
+        loadNeeds();
+    }
 }
+
+// Eventos de navegação
+navHome.addEventListener('click', (e) => {
+    e.preventDefault();
+    showSection(welcomeSection);
+});
+
+navRegister.addEventListener('click', (e) => {
+    e.preventDefault();
+    showSection(registerSection);
+});
+
+navNeeds.addEventListener('click', (e) => {
+    e.preventDefault();
+    showSection(needsSection);
+});
+
+heroRegister.addEventListener('click', (e) => {
+    e.preventDefault();
+    showSection(registerSection);
+});
+
+heroNeeds.addEventListener('click', (e) => {
+    e.preventDefault();
+    showSection(needsSection);
+});
+
+welcomeRegister.addEventListener('click', (e) => {
+    e.preventDefault();
+    showSection(registerSection);
+});
+
+welcomeNeeds.addEventListener('click', (e) => {
+    e.preventDefault();
+    showSection(needsSection);
+});
