@@ -22,3 +22,12 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Estilos base do corpo da página */
+body {
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+
