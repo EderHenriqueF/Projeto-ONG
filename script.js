@@ -188,3 +188,88 @@ function fetchCEP(cep) {
             cepInput.style.borderColor = 'red';
         });
 }
+
+/**
+ * Valida e envia o formulário de cadastro de necessidades
+ * 
+ * Esta função valida todos os campos obrigatórios do formulário e, se válidos,
+ * cria um novo objeto de necessidade e adiciona ao array de necessidades.
+ */
+needForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Validar campos obrigatórios
+    const requiredFields = needForm.querySelectorAll('[required]');
+    let isValid = true;
+    
+    requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+            field.style.borderColor = 'red';
+            isValid = false;
+        } else {
+            field.style.borderColor = '#e2e8f0';
+        }
+    });
+    
+    if (!isValid) {
+        alert('Por favor, preencha todos os campos obrigatórios.');
+        return;
+    }
+    
+    // Validar formato do CEP
+    const cepRegex = /^\d{5}-\d{3}$/;
+    if (!cepRegex.test(cepInput.value)) {
+        alert('Por favor, insira um CEP válido no formato 00000-000.');
+        cepInput.style.borderColor = 'red';
+        return;
+    }
+    
+    // Criar objeto com os dados da necessidade
+    const newNeed = {
+        id: Date.now(),
+        institution: document.getElementById('institution-name').value,
+        helpType: document.getElementById('help-type').value,
+        title: document.getElementById('need-title').value,
+        description: document.getElementById('need-description').value,
+        cep: document.getElementById('cep').value,
+        street: document.getElementById('street').value,
+        neighborhood: document.getElementById('neighborhood').value,
+        city: document.getElementById('city').value,
+        state: document.getElementById('state').value,
+        contact: document.getElementById('contact').value,
+        date: new Date().toLocaleDateString('pt-BR')
+    };
+    
+    // Adicionar ao array de necessidades
+    needs.push(newNeed);
+    
+    // Limpar formulário
+    needForm.reset();
+    
+    // Mostrar mensagem de sucesso com animação
+    const successMsg = document.createElement('div');
+    successMsg.textContent = 'Necessidade cadastrada com sucesso!';
+    successMsg.style.position = 'fixed';
+    successMsg.style.top = '20px';
+    successMsg.style.left = '50%';
+    successMsg.style.transform = 'translateX(-50%)';
+    successMsg.style.backgroundColor = 'var(--success)';
+    successMsg.style.color = 'white';
+    successMsg.style.padding = '15px 30px';
+    successMsg.style.borderRadius = '50px';
+    successMsg.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
+    successMsg.style.zIndex = '1000';
+    successMsg.style.animation = 'fadeInUp 0.5s ease';
+    document.body.appendChild(successMsg);
+    
+    setTimeout(() => {
+        successMsg.style.animation = 'fadeOut 0.5s ease';
+        setTimeout(() => {
+            document.body.removeChild(successMsg);
+        }, 500);
+    }, 3000);
+    
+    // Redirecionar para a lista de necessidades
+    showSection(needsSection);
+});
+
