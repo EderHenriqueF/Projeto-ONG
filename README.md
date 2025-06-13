@@ -34,11 +34,16 @@ ViaCEP para consulta de endereços
 🎨 Design System
 Cores Principais
 Cor	Código	Uso
-Azul Primário	#013dc0	Cabeçalho, botões
-Azul Secundário	#3a6bd6	Elementos ativos
-Vermelho	#dc2626	Botões de ação
-Destaque	#07ebfc	Elementos de foco
-Tipografia
+Azul Primário	#013dc0	Cabeçalho.
+
+botões Azul Secundário	#3a6bd6.
+
+Elementos ativos Vermelho	#dc2626.
+
+Botões de ação Destaque	#07ebfc.
+
+Elementos de foco Tipografia.
+
 Títulos: Fredoka One (cursiva e amigável)
 
 Texto Corrido: Poppins (limpa e legível)
@@ -65,11 +70,18 @@ Aguarde voluntários entrarem em contato
 📂 Estrutura do Código
 text
 conecta-voluntarios/
-├── index.html          # Página principal com toda a estrutura
-├── style.css           # Estilos CSS (incorporado no HTML)
-└── script.js           # Lógica JavaScript (incorporado no HTML)
+
+├── index.html          # Página principal com toda a estrutura.
+
+├── style.css           # Estilos CSS (incorporado no HTML).
+
+└── script.js           # Lógica JavaScript (incorporado no HTML).
+
+
 🔍 Detalhes Técnicos
+
 Features Implementadas
+
 Validação de Formulário: Todos os campos obrigatórios são validados antes do envio.
 
 Consulta de CEP: Integração com a API ViaCEP para preenchimento automático de endereço.
@@ -84,39 +96,62 @@ Trechos de Código Destacados
 Consulta de CEP:
 
 javascript
+
 function fetchCEP(cep) {
+
     cep = cep.replace('-', '');
+
     fetch(`https://viacep.com.br/ws/${cep}/json/`)
+
         .then(response => response.json())
+
         .then(data => {
+
             if (!data.erro) {
+
                 streetInput.value = data.logradouro;
+
                 neighborhoodInput.value = data.bairro;
+
                 // ... outros campos
+
             }
+
         });
+
 }
+
 Filtragem de Oportunidades:
 
 javascript
+
 function loadNeeds() {
+
     let filteredNeeds = [...needs];
+
     const searchTerm = searchInput.value.toLowerCase();
     
     if (searchTerm) {
+
         filteredNeeds = filteredNeeds.filter(need => 
+
             need.title.toLowerCase().includes(searchTerm) || 
+
             need.description.toLowerCase().includes(searchTerm)
     }
+
+
     // ... renderiza os resultados
 }
+
 🌱 Roadmap e Melhorias Futuras
-Sistema de login para instituições
 
-Avaliação de voluntários e instituições
+Sistema de login para instituições:
 
-Chat integrado na plataforma
+Avaliação de voluntários e instituições.
 
-Notificações por e-mail
+Chat integrado na plataforma.
 
-Dashboard com métricas de impacto
+Notificações por e-mail.
+
+Dashboard com métricas de impacto.
